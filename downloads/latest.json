@@ -1,0 +1,41 @@
+{
+  "name": "SmartPrompt",
+  "version": "0.1.0",
+  "builtAt": "2026-09-17T06:38:56.031Z",
+  "license": "MIT",
+  "site": "https://knybbe.github.io/smartprompt-site",
+  "sourceNote": "Extension source lives in a private repo; public downloads and this site are published from knybbe/smartprompt-site.",
+  "siteRepo": "https://github.com/knybbe/smartprompt-site",
+  "downloads": {
+    "full": {
+      "label": "Full",
+      "version": "0.1.0",
+      "file": "smartprompt-full-0.1.0.zip",
+      "latestFile": "smartprompt-full-latest.zip",
+      "bytes": 6866582,
+      "sizeHuman": "6.5 MB",
+      "url": "./downloads/smartprompt-full-latest.zip",
+      "versionedUrl": "./downloads/smartprompt-full-0.1.0.zip",
+      "absoluteUrl": "https://knybbe.github.io/smartprompt-site/downloads/smartprompt-full-latest.zip",
+      "absoluteVersionedUrl": "https://knybbe.github.io/smartprompt-site/downloads/smartprompt-full-0.1.0.zip",
+      "description": "All providers including Gemma 4 E2B/E4B (Transformers.js ONNX). Auto: Nano → e2b."
+    },
+    "lite": {
+      "label": "Lite",
+      "version": "0.1.0",
+      "file": "smartprompt-lite-0.1.0.zip",
+      "latestFile": "smartprompt-lite-latest.zip",
+      "bytes": 13872,
+      "sizeHuman": "13.5 KB",
+      "url": "./downloads/smartprompt-lite-latest.zip",
+      "versionedUrl": "./downloads/smartprompt-lite-0.1.0.zip",
+      "absoluteUrl": "https://knybbe.github.io/smartprompt-site/downloads/smartprompt-lite-latest.zip",
+      "absoluteVersionedUrl": "https://knybbe.github.io/smartprompt-site/downloads/smartprompt-lite-0.1.0.zip",
+      "description": "Nano + Local + BYOK only (no Transformers/ONNX). Much smaller. Auto: Nano, then prompt Local/BYOK."
+    }
+  },
+  "browsers": {
+    "chrome": "Load unpacked — same MV3 zip as Edge",
+    "edge": "Load unpacked — same MV3 zip as Chrome"
+  }
+}

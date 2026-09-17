@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="SmartPrompt — rewrite AI chat drafts with a hotkey or button. Download Full or Lite MV3 extension packages for Chrome and Edge."
+    />
+    <title>SmartPrompt — prompt rewriter for Chrome &amp; Edge</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <span class="badge">MV3 · Chrome &amp; Edge · MIT</span>
+        <h1>SmartPrompt</h1>
+        <p class="lead">
+          Rewrite the draft in web AI composers (ChatGPT, Claude, Gemini, Grok,
+          Perplexity, Copilot, and more) via hotkey
+          <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>;</kbd> or an
+          in-page ✨ button. On-device first, fully configurable providers.
+        </p>
+      </header>
+
+      <div class="grid">
+        <article class="card" id="card-full">
+          <h2>Full</h2>
+          <p class="meta">
+            All providers including Gemma 4 E2B/E4B (Transformers.js ONNX).
+            Default auto: Nano if available, else e2b.
+          </p>
+          <p class="size" data-size="full">6.5 MB</p>
+          <p class="meta">Pick Full when you want offline Gemma 4 with WebGPU.</p>
+          <a class="btn" id="dl-full" href="./downloads/smartprompt-full-latest.zip"
+            >Download Full</a
+          >
+        </article>
+        <article class="card" id="card-lite">
+          <h2>Lite</h2>
+          <p class="meta">
+            Nano + Local (Ollama) + BYOK only — no Transformers/ONNX. Much
+            smaller. Auto stays on Nano, then prompts you to pick Local or BYOK.
+          </p>
+          <p class="size" data-size="lite">13.5 KB</p>
+          <p class="meta">Pick Lite for a tiny install if you use Nano, Ollama, or a cloud key.</p>
+          <a class="btn" id="dl-lite" href="./downloads/smartprompt-lite-latest.zip"
+            >Download Lite</a
+          >
+        </article>
+      </div>
+
+      <p class="meta" style="color: var(--muted); margin-top: -0.5rem">
+        One zip works for <strong>both Chrome and Edge</strong> desktop (same MV3
+        package). Unzip, then Load unpacked.
+      </p>
+
+      <section>
+        <h2>Install (Chrome / Edge desktop)</h2>
+        <ol>
+          <li>Download <strong>Full</strong> or <strong>Lite</strong> and unzip the archive.</li>
+          <li>
+            Open <code>chrome://extensions</code> or <code>edge://extensions</code>.
+          </li>
+          <li>Enable <strong>Developer mode</strong>.</li>
+          <li>
+            Click <strong>Load unpacked</strong> and select the unzipped folder
+            (the one that contains <code>manifest.json</code>).
+          </li>
+          <li>
+            Open Options from the extension card, pick a provider, then use ✨ or
+            the hotkey on a supported chat site.
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Providers</h2>
+        <div class="providers">
+          <div>
+            <strong>Nano</strong>
+            <span>Chrome Built-in Prompt API when available</span>
+          </div>
+          <div>
+            <strong>Gemma 4 E2B / E4B</strong>
+            <span>Transformers.js + ONNX · Full build only · needs WebGPU</span>
+          </div>
+          <div>
+            <strong>Local</strong>
+            <span>Ollama-compatible OpenAI API on localhost</span>
+          </div>
+          <div>
+            <strong>BYOK</strong>
+            <span>Bring-your-own-key OpenAI-compatible endpoint</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Mobile</h2>
+        <p class="meta" style="color: var(--muted); margin: 0">
+          <strong>Android:</strong> best-effort via Edge extensions where
+          available; BYOK is the most reliable path. Hotkey is desktop-oriented —
+          use the in-page button. <strong>iOS:</strong> deferred — no comparable
+          MV3 load-unpacked path.
+        </p>
+      </section>
+
+      <section>
+        <h2>Source &amp; releases</h2>
+        <p class="meta" style="color: var(--muted); margin: 0 0 0.75rem">
+          Extension source is private. Public downloads and this landing page live
+          in
+          <a href="https://github.com/knybbe/smartprompt-site"
+            >knybbe/smartprompt-site</a
+          >.
+          Versioned zips also appear on
+          <a href="https://github.com/knybbe/smartprompt-site/releases">Releases</a>.
+          Manifest: <a href="./downloads/latest.json"><code>latest.json</code></a>.
+        </p>
+        <a class="btn secondary" href="https://github.com/knybbe/smartprompt-site"
+          >View site repo</a
+        >
+      </section>
+
+      <footer>
+        SmartPrompt · MIT License · v0.1.0 · built
+        2026-09-17T06:38:56.031Z
+      </footer>
+    </div>
+    <script>
+      // Fill sizes from latest.json when served (works on Pages).
+      fetch("./downloads/latest.json")
+        .then((r) => (r.ok ? r.json() : null))
+        .then((data) => {
+          if (!data?.downloads) return;
+          const full = data.downloads.full;
+          const lite = data.downloads.lite;
+          const fullEl = document.querySelector('[data-size="full"]');
+          const liteEl = document.querySelector('[data-size="lite"]');
+          if (fullEl && full?.sizeHuman) fullEl.textContent = full.sizeHuman;
+          if (liteEl && lite?.sizeHuman) liteEl.textContent = lite.sizeHuman;
+          const foot = document.querySelector("footer");
+          if (foot && data.version) {
+            foot.textContent = `SmartPrompt · MIT License · v${data.version} · built ${data.builtAt || ""}`;
+          }
+        })
+        .catch(() => undefined);
+    </script>
+  </body>
+</html>
