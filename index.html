@@ -33,7 +33,10 @@
           <p class="size" data-size="full">6.5 MB</p>
           <p class="meta">Pick Full when you want offline Gemma 4 with WebGPU.</p>
           <a class="btn" id="dl-full" href="./downloads/smartprompt-full-latest.zip"
-            >Download Full</a
+            >Download Full (.zip)</a
+          >
+          <a class="btn secondary" id="dl-full-crx" href="./downloads/smartprompt-full-latest.crx"
+            >Full .crx (Edge Android Canary)</a
           >
         </article>
         <article class="card" id="card-lite">
@@ -45,7 +48,10 @@
           <p class="size" data-size="lite">13.5 KB</p>
           <p class="meta">Pick Lite for a tiny install if you use Nano, Ollama, or a cloud key.</p>
           <a class="btn" id="dl-lite" href="./downloads/smartprompt-lite-latest.zip"
-            >Download Lite</a
+            >Download Lite (.zip)</a
+          >
+          <a class="btn secondary" id="dl-lite-crx" href="./downloads/smartprompt-lite-latest.crx"
+            >Lite .crx (Edge Android Canary)</a
           >
         </article>
       </div>
@@ -97,12 +103,52 @@
       </section>
 
       <section>
-        <h2>Mobile</h2>
-        <p class="meta" style="color: var(--muted); margin: 0">
-          <strong>Android:</strong> best-effort via Edge extensions where
-          available; BYOK is the most reliable path. Hotkey is desktop-oriented —
-          use the in-page button. <strong>iOS:</strong> deferred — no comparable
-          MV3 load-unpacked path.
+        <h2>Mobile (Android)</h2>
+        <h3 style="font-size:1rem;margin:1rem 0 0.5rem">Chrome on Android</h3>
+        <p class="meta" style="color: var(--muted); margin: 0 0 1rem">
+          <strong>Not supported.</strong> Chrome for Android does not install browser
+          extensions (no Load unpacked, no store sideload for MV3 packages like
+          SmartPrompt). Use desktop Chrome/Edge, or Edge on Android below.
+        </p>
+        <h3 style="font-size:1rem;margin:1rem 0 0.5rem">Edge on Android</h3>
+        <p class="meta" style="color: var(--muted); margin: 0 0 0.75rem">
+          Stable Edge only installs extensions from Microsoft’s curated Android
+          list — SmartPrompt is <strong>not</strong> in that list, and you
+          <strong>cannot</strong> “Load unpacked” from a zip the way you do on
+          desktop.
+        </p>
+        <p class="meta" style="color: var(--muted); margin: 0 0 0.75rem">
+          <strong>Best-effort (Edge Canary):</strong> some builds let you install a
+          <code>.crx</code> via Developer options.
+        </p>
+        <ol>
+          <li>Install <strong>Microsoft Edge Canary</strong> from Play Store.</li>
+          <li>
+            Open <code>edge://flags</code>, enable anything labeled like
+            <em>Android Extension</em> if present, then restart.
+          </li>
+          <li>
+            Settings → <strong>About Microsoft Edge</strong> → tap the build number
+            ~5 times until Developer options unlock.
+          </li>
+          <li>
+            Developer options → <strong>Extension install by crx</strong> (name may
+            vary) → pick the SmartPrompt <code>.crx</code> from Downloads
+            (prefer <strong>Lite</strong> on phones; use BYOK in Options).
+          </li>
+          <li>
+            Open ChatGPT/Claude/etc. and use the in-page ✨ button (hotkeys are
+            unreliable on mobile).
+          </li>
+        </ol>
+        <p class="meta" style="color: var(--muted); margin: 0.75rem 0 0">
+          “Install by ID” only works for extensions already on the
+          <a href="https://microsoftedge.microsoft.com/addons/">Edge Add-ons</a>
+          store — not for these GitHub zips.
+        </p>
+        <p class="meta" style="color: var(--muted); margin: 0.75rem 0 0">
+          Expect rough edges: Nano/WebGPU/Gemma often missing on phones; BYOK is
+          the reliable provider. iOS is deferred.
         </p>
       </section>
 
@@ -125,7 +171,7 @@
 
       <footer>
         SmartPrompt · MIT License · v0.1.0 · built
-        2026-09-17T06:38:56.031Z
+        2026-09-17T06:44:00.909Z
       </footer>
     </div>
     <script>

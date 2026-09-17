@@ -1,7 +1,7 @@
 {
   "name": "SmartPrompt",
   "version": "0.1.0",
-  "builtAt": "2026-09-17T06:38:56.031Z",
+  "builtAt": "2026-09-17T06:44:00.909Z",
   "license": "MIT",
   "site": "https://knybbe.github.io/smartprompt-site",
   "sourceNote": "Extension source lives in a private repo; public downloads and this site are published from knybbe/smartprompt-site.",
@@ -16,6 +16,16 @@
       "sizeHuman": "6.5 MB",
       "url": "./downloads/smartprompt-full-latest.zip",
       "versionedUrl": "./downloads/smartprompt-full-0.1.0.zip",
+      "crx": {
+        "file": "smartprompt-full-0.1.0.crx",
+        "latestFile": "smartprompt-full-latest.crx",
+        "bytes": 6817117,
+        "sizeHuman": "6.5 MB",
+        "url": "./downloads/smartprompt-full-latest.crx",
+        "versionedUrl": "./downloads/smartprompt-full-0.1.0.crx",
+        "absoluteUrl": "https://knybbe.github.io/smartprompt-site/downloads/smartprompt-full-latest.crx",
+        "absoluteVersionedUrl": "https://knybbe.github.io/smartprompt-site/downloads/smartprompt-full-0.1.0.crx"
+      },
       "absoluteUrl": "https://knybbe.github.io/smartprompt-site/downloads/smartprompt-full-latest.zip",
       "absoluteVersionedUrl": "https://knybbe.github.io/smartprompt-site/downloads/smartprompt-full-0.1.0.zip",
       "description": "All providers including Gemma 4 E2B/E4B (Transformers.js ONNX). Auto: Nano → e2b."
@@ -29,6 +39,16 @@
       "sizeHuman": "13.5 KB",
       "url": "./downloads/smartprompt-lite-latest.zip",
       "versionedUrl": "./downloads/smartprompt-lite-0.1.0.zip",
+      "crx": {
+        "file": "smartprompt-lite-0.1.0.crx",
+        "latestFile": "smartprompt-lite-latest.crx",
+        "bytes": 15412,
+        "sizeHuman": "15.1 KB",
+        "url": "./downloads/smartprompt-lite-latest.crx",
+        "versionedUrl": "./downloads/smartprompt-lite-0.1.0.crx",
+        "absoluteUrl": "https://knybbe.github.io/smartprompt-site/downloads/smartprompt-lite-latest.crx",
+        "absoluteVersionedUrl": "https://knybbe.github.io/smartprompt-site/downloads/smartprompt-lite-0.1.0.crx"
+      },
       "absoluteUrl": "https://knybbe.github.io/smartprompt-site/downloads/smartprompt-lite-latest.zip",
       "absoluteVersionedUrl": "https://knybbe.github.io/smartprompt-site/downloads/smartprompt-lite-0.1.0.zip",
       "description": "Nano + Local + BYOK only (no Transformers/ONNX). Much smaller. Auto: Nano, then prompt Local/BYOK."
